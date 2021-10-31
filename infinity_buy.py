@@ -54,6 +54,7 @@ def check_profit(ticker,price,total):
 
 # 로그인
 #upbit = pyupbit.Upbit(access, secret)
+bot.sendMessage(ID, '========start here========')
 trade_ticker = 'STORJ'
 ticker = 'KRW-STORJ'
 #my_money = 1000000 #krw = get_balance("KRW")

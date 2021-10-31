@@ -5,11 +5,11 @@ import requests
 import telegram
 import pandas as pd
 
-access = 
-secret = 
+access = "JjKKScVhqHgw13kEdXkJOKkJw87fct8S48wAQgCY"
+secret = "ExiLxFFWYwHdsi7mKGS9Fxm9WNI9kfNxF08VuRiC"
 
-TOKEN = '2020050827:
-ID = '17
+TOKEN = '2020050827:AAHKyThn-rkBCgbLaPc_O87OfEDZtwTu7ZY'
+ID = '1796318367'
 bot = telegram.Bot(TOKEN)
 
 def get_target_price(ticker, k):
@@ -60,6 +60,7 @@ ticker = 'KRW-STORJ'
 first_buy = False
 check_add_buy = False
 check_inform = False
+sell_all = False
 possess_total = 0
 n = 0
 '''
@@ -98,9 +99,10 @@ while True:
                       + "투자금: " + str(possess_money) + '\n'
                       + "첫 매수량: " + str(possess_total) + '\n')
             else:
+                sell_all = False
                 current_profit = check_profit(ticker,avg_price,possess_total)
                 print("수익률: ",current_profit)
-                if current_profit >=1:
+                if current_profit >=0.5 and sell_all == False:
                     print('5%이상 매도 시작')
                     sell_price = get_current_price(ticker)
                     my_money = sell_price*(possess_total*0.9995)
@@ -111,6 +113,8 @@ while True:
                                     + "수익률: " + str(current_profit)+ '\n'
                                     + "test...ing")
                     n=0
+                    first_buy = False
+                    sell_all = True
             time.sleep(1)
         else:
             current_price = get_current_price(ticker)

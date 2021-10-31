@@ -32,7 +32,7 @@ def get_ma10(ticker):
 
 def get_balance(ticker):
     """잔고 조회"""
-    balances = upbit.get_balances()
+    balances = pyupbit.get_balances()
     for b in balances:
         if b['currency'] == ticker:
             if b['balance'] is not None:

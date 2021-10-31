@@ -5,11 +5,11 @@ import requests
 import telegram
 import pandas as pd
 
-access = "JjKKScVhqHgw13kEdXkJOKkJw87fct8S48wAQgCY"
-secret = "ExiLxFFWYwHdsi7mKGS9Fxm9WNI9kfNxF08VuRiC"
+access = 
+secret = 
 
-TOKEN = '2020050827:AAHKyThn-rkBCgbLaPc_O87OfEDZtwTu7ZY'
-ID = '1796318367'
+TOKEN = '2020050827:
+ID = '17
 bot = telegram.Bot(TOKEN)
 
 def get_target_price(ticker, k):
